@@ -1,0 +1,81 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disaster Relief Task Coordination Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="dashboard">
+    <div class="stat-card">Active Tasks: <span id="activeCount">0</span></div>
+    <div class="stat-card">Critical Tasks: <span id="criticalCount">0</span></div>
+    <div class="stat-card">Volunteers: <span id="volunteerCount">0</span></div>
+    <div class="stat-card">Completed Today: <span id="completedCount">0</span></div>
+  </div>
+
+  <div class="container">
+    <div>
+      <div class="toolbar">
+        <div class="filters">
+          <button data-priority="all">All</button>
+          <button data-priority="critical">Critical</button>
+          <button data-priority="high">High</button>
+          <button data-priority="medium">Medium</button>
+        </div>
+        <input type="text" id="searchInput" placeholder="Search tasks...">
+      </div>
+      <div class="task-grid" id="taskGrid"></div>
+      <button id="newTaskBtn">+ New Task</button>
+    </div>
+
+    <div class="sidebar">
+      <div id="volunteerList"></div>
+      <button id="registerVolunteerBtn">+ Register Volunteer</button>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="taskModalBackdrop">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Create Task</h3>
+        <button id="closeTaskModal" class="close-btn">&times;</button>
+      </div>
+      <input id="taskTitle" placeholder="Task Title">
+      <div class="error" id="titleError"></div>
+      <select id="taskPriority">
+        <option value="critical">Critical</option>
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+      </select>
+      <textarea id="taskDescription" maxlength="200" placeholder="Description"></textarea>
+      <div id="descCounter">200/200</div>
+      <div class="error" id="descError"></div>
+      <input id="minVolunteers" type="number" placeholder="Minimum Volunteers">
+      <button id="createTaskBtn">Create Task</button>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="volunteerModalBackdrop">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Register Volunteer</h3>
+        <button id="closeVolunteerModal" class="close-btn">&times;</button>
+      </div>
+      <input id="volName" placeholder="Full Name">
+      <input id="volEmail" placeholder="Email">
+      <div>
+        <label><input type="checkbox" value="first aid"> First Aid</label><br>
+        <label><input type="checkbox" value="medical"> Medical</label><br>
+        <label><input type="checkbox" value="logistics"> Logistics</label><br>
+        <label><input type="checkbox" value="engineering"> Engineering</label><br>
+        <label><input type="checkbox" value="search & rescue"> Search & Rescue</label>
+      </div>
+      <button id="submitVolunteerBtn">Register</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

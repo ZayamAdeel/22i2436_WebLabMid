@@ -1,0 +1,23 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+body { background: #f5f7fb; padding: 20px; }
+.dashboard { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 20px; }
+.stat-card, .task-card, .volunteer-card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.container { display: grid; grid-template-columns: 3fr 1fr; gap: 20px; }
+.toolbar { display: flex; justify-content: space-between; margin-bottom: 15px; }
+.filters button { margin-right: 8px; padding: 8px 12px; border: none; border-radius: 15px; cursor: pointer; }
+.task-grid { display: flex; flex-direction: column; gap: 12px; }
+.task-card.critical { border-left: 5px solid red; }
+.task-card.high { border-left: 5px solid orange; }
+.task-card.medium { border-left: 5px solid green; }
+.status-btn { padding: 5px 10px; border-radius: 15px; border: none; cursor: pointer; }
+.pending { background: #fff3cd; color: #856404; }
+.active { background: #cce5ff; color: #004085; }
+.completed { background: #d4edda; color: #155724; }
+.assign-btn.disabled { opacity: 0.4; pointer-events: none; }
+.sidebar button, #newTaskBtn { margin-top: 10px; padding: 10px; width: 100%; cursor: pointer; }
+.modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 999; }
+.modal { background: white; padding: 20px; width: 400px; border-radius: 10px; }
+.modal input, .modal textarea, .modal select { width: 100%; margin: 8px 0; padding: 8px; }
+.modal-header { display: flex; justify-content: space-between; align-items: center; }
+.close-btn { border: none; background: none; font-size: 20px; cursor: pointer; }
+.error { color: red; font-size: 12px; }
